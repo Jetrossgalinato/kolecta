@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../widgets/input_fields.dart';
 import '../widgets/other_options.dart';
+import '../../register_page/views/register_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -97,21 +98,33 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
               const SizedBox(height: 24),
               // Sign up link
-              Center(
-                child: RichText(
-                  text: TextSpan(
-                    text: "Don't have account? ",
-                    style: TextStyle(color: Colors.grey[700], fontSize: 14),
-                    children: [
-                      TextSpan(
-                        text: 'Sign Up',
-                        style: TextStyle(
-                          color: Colors.purple[400],
-                          fontWeight: FontWeight.w600,
-                          fontSize: 14,
+              Padding(
+                padding: const EdgeInsets.only(bottom: 40.0),
+                child: Center(
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) => const RegisterScreen(),
                         ),
+                      );
+                    },
+                    child: RichText(
+                      text: TextSpan(
+                        text: "Don't have account? ",
+                        style: TextStyle(color: Colors.grey[700], fontSize: 14),
+                        children: [
+                          TextSpan(
+                            text: 'Sign Up',
+                            style: TextStyle(
+                              color: Colors.purple[400],
+                              fontWeight: FontWeight.w600,
+                              fontSize: 14,
+                            ),
+                          ),
+                        ],
                       ),
-                    ],
+                    ),
                   ),
                 ),
               ),
