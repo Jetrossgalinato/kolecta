@@ -123,7 +123,6 @@ class _InputFieldsState extends State<InputFields> {
               onPressed: () {},
               style: TextButton.styleFrom(
                 padding: EdgeInsets.zero,
-                minimumSize: Size.zero,
                 tapTargetSize: MaterialTapTargetSize.shrinkWrap,
               ),
               child: Text(
